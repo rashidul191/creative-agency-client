@@ -6,6 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
+import Login from './Components/Login/Login';
+import UserOder from './Components/UserOder/UserOder/UserOder';
 
 function App() {
   return (
@@ -18,6 +20,14 @@ function App() {
 
         <Router path="/home">
           <Home></Home>
+        </Router>
+
+        <Router path="/login">
+          <Login></Login>
+        </Router>
+
+        <Router path="/userOrder">
+          <UserOder></UserOder>
         </Router>
 
       </Switch>

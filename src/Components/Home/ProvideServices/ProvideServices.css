@@ -1,0 +1,12 @@
+.card-border{
+    border: none;
+}
+
+.service-img-size{
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+}
+.text-position{
+    text-align: center;
+}

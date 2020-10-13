@@ -1,0 +1,9 @@
+.btn-brand{
+    border: none;
+    height: 55px;
+    width: 180px;
+    background-color: #111430;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
