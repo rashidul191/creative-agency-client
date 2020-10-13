@@ -9,9 +9,9 @@ const SiteBar = () => {
                 <img className="logo-style" src={logo} alt="" />
             </div>
             <div className="">
-                <p><Link to="/userOrder">Order</Link></p>
-                <p><Link to="/servicesList">Service list</Link></p>
-                <p><Link to="/review">Review</Link></p>
+                <Link to="/userOrder"><li>Order</li></Link>
+                <Link to="/servicesList"><li>Service list</li></Link>
+                <Link to="/review"><li>Review</li></Link>
             </div>
         </section>
     );

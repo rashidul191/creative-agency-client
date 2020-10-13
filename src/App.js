@@ -10,6 +10,7 @@ import Login from './Components/Login/Login';
 import UserOder from './Components/UserOder/UserOder/UserOder';
 import ServiceList from './Components/UserOder/ServiceList/ServiceList/ServiceList';
 import Review from './Components/UserOder/Review/Review';
+import AdminServiceList from './Components/AdminPanel/AdminPlane/AdminServiceList';
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
 
         <Router path="/review">
           <Review></Review>
+        </Router>
+
+        <Router path="/adminServiceList">
+         <AdminServiceList></AdminServiceList>
         </Router>
 
       </Switch>
