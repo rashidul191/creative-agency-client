@@ -1,9 +1,8 @@
 import React from 'react';
-import './UserOder.css';
 import SiteBar from '../SiteBar/SiteBar';
-import OrderForm from '../OrderForm/OrderForm';
+import ReviewDetails from './ReviewDetails/ReviewDetails';
 
-const UserOder = () => {
+const Review = () => {
     return (
         <section className="container pt-4">
             <div className="row">
@@ -11,11 +10,11 @@ const UserOder = () => {
                     <SiteBar></SiteBar>
                 </div>
                 <div className="col-md-10">
-                    <OrderForm> </OrderForm>
+                    <ReviewDetails></ReviewDetails>
                 </div>
             </div>
         </section>
     );
 };
 
-export default UserOder;
+export default Review;

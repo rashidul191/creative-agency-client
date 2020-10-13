@@ -8,6 +8,8 @@ import {
 import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
 import UserOder from './Components/UserOder/UserOder/UserOder';
+import ServiceList from './Components/UserOder/ServiceList/ServiceList/ServiceList';
+import Review from './Components/UserOder/Review/Review';
 
 function App() {
   return (
@@ -28,6 +30,15 @@ function App() {
 
         <Router path="/userOrder">
           <UserOder></UserOder>
+        </Router>
+
+
+        <Router path="/servicesList">
+          <ServiceList></ServiceList>
+        </Router>
+
+        <Router path="/review">
+          <Review></Review>
         </Router>
 
       </Switch>
