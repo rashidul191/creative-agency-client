@@ -4,6 +4,13 @@ import logo from '../../images/logos/logo.png';
 import googleImg from '../../images/icons/google.jpg';
 import { Link } from 'react-router-dom';
 
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from './firebase.config';
+
+
+firebase.initializeApp(firebaseConfig);
+
 const Login = () => {
 
     const handleGoogle = () => {
@@ -22,7 +29,11 @@ const Login = () => {
                         <div className="login-border">
                             <div className="login-body-in-part">
                                 <h4>Login With</h4>
-                                <button type="button" className="btn-login-btn"> <img className="google-icon" src={googleImg} alt="" /> Continue with Google</button>
+                                <button type="button"
+                                 onClick={handleGoogle} className="btn-login-btn">
+                                     <img className="google-icon"   src={googleImg} alt="" />
+                                      Continue with Google
+                                      </button>
                                 <p>Don't have an account? <Link to="/login">Create an account</Link></p>
                            </div>
 
