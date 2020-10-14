@@ -1,0 +1,41 @@
+.login-logo-size{
+    height: 50px;
+    
+}
+
+.login-body{
+    height: 400px;
+    width: 100%;
+    
+}
+
+.login-border{
+    margin: 0 auto;
+    height: 300px;
+    width: 50%;
+    border: 1px solid gray;
+}
+.login-body-in-part{
+    height: 150px;
+    width: 80%;
+  
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.btn-login-btn{
+    border: none;
+    height: 40px;
+    width: 80%;
+    border: 1px solid gray;
+    border-radius: 30px;
+    
+
+}
+
+.google-icon{
+    height: 30px;
+    border-radius: 20px;
+    margin-right: 10px;
+    
+}

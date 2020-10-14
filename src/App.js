@@ -12,6 +12,8 @@ import ServiceList from './Components/UserOder/ServiceList/ServiceList/ServiceLi
 import Review from './Components/UserOder/Review/Review';
 import AdminServiceList from './Components/AdminPanel/AdminPlane/AdminServiceList';
 import AddService from './Components/AdminPanel/AddService/AddService';
+import MakeAdmin from './Components/AdminPanel/MakeAdmin/MakeAdmin';
+import NoMatch from './Components/NoMatch/NoMatch';
 
 function App() {
   return (
@@ -50,6 +52,14 @@ function App() {
         <Router path="/addService">
          <AddService></AddService>
         </Router>
+
+        <Router path="/makeAdmin">
+         <MakeAdmin></MakeAdmin>
+        </Router>
+
+        <Route path="*">
+            <NoMatch />
+          </Route>
 
       </Switch>
     </Router>

@@ -1,0 +1,16 @@
+.makeAdmin-container{
+    height: 200px;
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.btn-submit-btn{
+    border: none;
+    height: 40px;
+    width: 120px;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+}
