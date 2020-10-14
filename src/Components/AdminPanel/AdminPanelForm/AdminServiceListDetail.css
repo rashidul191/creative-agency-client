@@ -1,4 +1,34 @@
 .serviceList-container{
-    height: 700px;
-    width: 100%;
+    height: 500px;
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    padding-top: 20px;
+    border-radius: 8px;
+}
+
+.body-part-1{
+    height: 30px;
+    width: 98%;
+    margin: 0 auto;
+    background-color: #F4F7FC;
+    border-radius: 5px;
+}
+.body-part-2{
+    height: 30px;
+    width: 98%;
+    margin: 0 auto;
+    
+    border-radius: 5px;
+}
+
+.option-style{
+    border: none;
+    background-color: none;
+}
+.text-option1{
+    color: red;
+}
+.text-option2{
+    color: green;
 }
