@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.css';
 import logo from '../../images/logos/logo.png';
 import googleImg from '../../images/icons/google.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -24,6 +24,10 @@ const Login = () => {
     });
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -39,6 +43,7 @@ const Login = () => {
                 }
                 setUser(signedInUser);
                 setLoggedInUser(signedInUser);
+                history.replace(from);
                 console.log(result);
 
             })
@@ -70,19 +75,19 @@ const Login = () => {
                                       Continue with Google
                                       </button>
                                 <p>Don't have an account? <Link to="/login">Create an account</Link></p>
-                               
+
                             </div>
 
                         </div>
                         {
-                                    user.isSignedIn && <div>
-                                        <p className="login-success-text">Login done</p>
-                                        {/* <p>Welcome, {user.name}</p>
+                            user.isSignedIn && <div>
+                                <p className="login-success-text">Login done</p>
+                                {/* <p>Welcome, {user.name}</p>
                             <p>Email, {user.email}</p>
                             <img src={user.photo} alt=""/> */}
-                                    </div>
+                            </div>
 
-                                }
+                        }
                     </div>
                 </div>
             </div>
