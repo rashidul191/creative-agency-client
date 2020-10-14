@@ -1,7 +1,8 @@
 import React from 'react';
 import './AdminServiceListDetail.css';
 
-const AdminServiceListDetail = () => {
+const AdminServiceListDetail = ({userDetail}) => {
+    console.log(userDetail);
     return (
         <section>
             <div>

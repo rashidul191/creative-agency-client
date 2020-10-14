@@ -41,7 +41,32 @@ function App() {
             <Login></Login>
           </Route>
 
-          <PrivateRoute path="/userOrder">
+          <Route path="/userOrder">
+            <UserOder></UserOder>
+          </Route>
+
+
+          <Route path="/servicesList">
+            <ServiceList></ServiceList>
+          </Route>
+
+          <Route path="/review">
+            <Review></Review>
+          </Route>
+
+          <Route path="/adminServiceList">
+            <AdminServiceList></AdminServiceList>
+          </Route>
+
+          <Route path="/addService">
+            <AddService></AddService>
+          </Route>
+
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
+
+          {/* <PrivateRoute path="/userOrder">
             <UserOder></UserOder>
           </PrivateRoute>
 
@@ -64,7 +89,7 @@ function App() {
 
           <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </PrivateRoute>
+          </PrivateRoute> */}
 
           <Route path="*">
             <NoMatch />

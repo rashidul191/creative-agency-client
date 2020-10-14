@@ -6,7 +6,7 @@ const SiteBar = () => {
     return (
         <section>
             <div className="mb-5">
-                <img className="logo-style" src={logo} alt="" />
+                <Link to="/"><img className="logo-style" src={logo} alt="" /></Link>
             </div>
             <div className="">
                 <Link to="/userOrder"><li>Order</li></Link>

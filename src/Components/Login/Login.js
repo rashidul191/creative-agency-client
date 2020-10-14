@@ -62,7 +62,7 @@ const Login = () => {
         <section className="container  mt-5 pt-5">
             <div className="text-center  ">
                 <div className="pb-4">
-                    <img className="login-logo-size" src={logo} alt="" />
+                   <Link to="/"> <img className="login-logo-size" src={logo} alt="" /> </Link>
                 </div>
                 <div>
                     <div className="login-body">
