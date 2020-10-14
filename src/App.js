@@ -14,55 +14,67 @@ import AdminServiceList from './Components/AdminPanel/AdminPlane/AdminServiceLis
 import AddService from './Components/AdminPanel/AddService/AddService';
 import MakeAdmin from './Components/AdminPanel/MakeAdmin/MakeAdmin';
 import NoMatch from './Components/NoMatch/NoMatch';
+import { createContext } from 'react';
+import { useState } from 'react';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
-      <Switch>
 
-        <Router exact path="/">
-          <Home></Home>
-        </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <h1>Email: {loggedInUser.email}</h1>
+        <Switch>
+          
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
 
-        <Router path="/home">
-          <Home></Home>
-        </Router>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
 
-        <Router path="/login">
-          <Login></Login>
-        </Router>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
 
-        <Router path="/userOrder">
-          <UserOder></UserOder>
-        </Router>
+          <PrivateRoute path="/userOrder">
+            <UserOder></UserOder>
+          </PrivateRoute>
 
 
-        <Router path="/servicesList">
-          <ServiceList></ServiceList>
-        </Router>
+          <PrivateRoute path="/servicesList">
+            <ServiceList></ServiceList>
+          </PrivateRoute>
 
-        <Router path="/review">
-          <Review></Review>
-        </Router>
+          <PrivateRoute path="/review">
+            <Review></Review>
+          </PrivateRoute>
 
-        <Router path="/adminServiceList">
-         <AdminServiceList></AdminServiceList>
-        </Router>
+          <PrivateRoute path="/adminServiceList">
+            <AdminServiceList></AdminServiceList>
+          </PrivateRoute>
 
-        <Router path="/addService">
-         <AddService></AddService>
-        </Router>
+          <PrivateRoute path="/addService">
+            <AddService></AddService>
+          </PrivateRoute>
 
-        <Router path="/makeAdmin">
-         <MakeAdmin></MakeAdmin>
-        </Router>
+          <PrivateRoute path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
 
-        <Route path="*">
+          <Route path="*">
             <NoMatch />
           </Route>
 
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
+
+    </UserContext.Provider>
 
   );
 }

@@ -7,14 +7,49 @@ import { Link } from 'react-router-dom';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../App';
 
 
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
 
+
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        name: '',
+        email: '',
+    });
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+
     const handleGoogle = () => {
-        console.log("click done");
+        firebase.auth().signInWithPopup(googleProvider)
+            .then(result => {
+                const { displayName, photoURL, email } = result.user;
+                const signedInUser = {
+                    isSignedIn: true,
+                    name: displayName,
+                    email: email,
+                    // photo: photoURL,
+                }
+                setUser(signedInUser);
+                setLoggedInUser(signedInUser);
+                console.log(result);
+
+            })
+            .catch(error => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.email;
+                const credential = error.credential;
+                console.log(errorCode, errorMessage, email, credential);
+
+            });
     }
 
 
@@ -30,15 +65,24 @@ const Login = () => {
                             <div className="login-body-in-part">
                                 <h4>Login With</h4>
                                 <button type="button"
-                                 onClick={handleGoogle} className="btn-login-btn">
-                                     <img className="google-icon"   src={googleImg} alt="" />
+                                    onClick={handleGoogle} className="btn-login-btn">
+                                    <img className="google-icon" src={googleImg} alt="" />
                                       Continue with Google
                                       </button>
                                 <p>Don't have an account? <Link to="/login">Create an account</Link></p>
-                           </div>
+                               
+                            </div>
 
                         </div>
+                        {
+                                    user.isSignedIn && <div>
+                                        <p className="login-success-text">Login done</p>
+                                        {/* <p>Welcome, {user.name}</p>
+                            <p>Email, {user.email}</p>
+                            <img src={user.photo} alt=""/> */}
+                                    </div>
 
+                                }
                     </div>
                 </div>
             </div>

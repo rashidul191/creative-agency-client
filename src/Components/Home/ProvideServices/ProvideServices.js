@@ -3,8 +3,14 @@ import './ProvideServices.css';
 import Service1 from '../../../images/icons/service1.png';
 import Service2 from '../../../images/icons/service2.png';
 import Service3 from '../../../images/icons/service3.png';
+import { useHistory } from 'react-router-dom';
 
 const ProvideServices = () => {
+
+    const history = useHistory()
+    const handleOrder = () =>{
+        history.push("/userOrder");
+    }
     return (
         <section className="container">
             <div>
@@ -13,14 +19,14 @@ const ProvideServices = () => {
                 </div>
                 <div>
                     <div class="card-deck">
-                        <div class="card card-border mt-3">
+                        <div onClick={handleOrder} class="card card-border mt-3">
                             <img src={Service1} class="card-img-top service-img-size" alt="..." />
                             <div class="card-body text-position">
-                                <h5 class="card-title">Web  Mobile design</h5>
+                                <h5 class="card-title">Web & Mobile design</h5>
                                 <p class="card-text text-secondary">We craft stunning and amazing web UI, using a well drrafted UX to fit your product.</p>
                             </div>
                         </div>
-                        <div class="card card-border mt-3">
+                        <div onClick={handleOrder} class="card card-border mt-3">
                             <img src={Service2} class="card-img-top service-img-size" alt="..." />
                             <div class="card-body text-position">
                                 <h5 class="card-title">Graphic Design</h5>
@@ -28,7 +34,7 @@ const ProvideServices = () => {
 
                             </div>
                         </div>
-                        <div class="card card-border mt-3">
+                        <div onClick={handleOrder} class="card card-border mt-3">
                             <img src={Service3} class="card-img-top service-img-size" alt="..." />
                             <div class="card-body ">
                                 <h5 class="card-title text-position">Web development</h5>
