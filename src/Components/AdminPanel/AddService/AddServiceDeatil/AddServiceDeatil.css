@@ -1,0 +1,29 @@
+.addService-body-1{
+    height: 300px;
+    width: 90%;
+    margin: 0 auto;
+   
+    border-radius: 10px;
+}
+.addService-container{
+    height: 300px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.addService-body{
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.btn-submit{
+    border: none;
+    height: 50px;
+    width: 160px;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+}

@@ -7,10 +7,10 @@ const AdminServiceListDetail = () => {
             <div>
                 <div className="row">
                     <div className="col-md-6">
-                        <h5>Order</h5>
+                        <h5>Service List</h5>
                     </div>
                     <div className="col-md-5 ml-5">
-                        <small><h6>Pro Rasel</h6></small>
+                        <small><h6>Sufi Ahmed</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body pt-3">
@@ -34,15 +34,12 @@ const AdminServiceListDetail = () => {
                                     <select class="form-control option-style" >
                                         <option className="text-option1">Pending</option>
                                         <option className="text-option2">Done</option>
-                                        
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
     );

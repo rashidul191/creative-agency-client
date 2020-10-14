@@ -11,6 +11,7 @@ import UserOder from './Components/UserOder/UserOder/UserOder';
 import ServiceList from './Components/UserOder/ServiceList/ServiceList/ServiceList';
 import Review from './Components/UserOder/Review/Review';
 import AdminServiceList from './Components/AdminPanel/AdminPlane/AdminServiceList';
+import AddService from './Components/AdminPanel/AddService/AddService';
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
 
         <Router path="/adminServiceList">
          <AdminServiceList></AdminServiceList>
+        </Router>
+
+        <Router path="/addService">
+         <AddService></AddService>
         </Router>
 
       </Switch>
