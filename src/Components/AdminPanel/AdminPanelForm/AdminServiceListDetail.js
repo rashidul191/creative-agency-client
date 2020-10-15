@@ -1,8 +1,21 @@
 import React from 'react';
 import './AdminServiceListDetail.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const AdminServiceListDetail = ({userDetail}) => {
-    console.log(userDetail);
+
+const AdminServiceListDetail = () => {
+
+    const [userInfo, setUserInfo] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/userDetailsByData')
+            .then(res => res.json())
+            .then(data => setUserInfo(data))
+    }, [])
+
+    // console.log(userInfo);
+
     return (
         <section>
             <div>
@@ -25,19 +38,33 @@ const AdminServiceListDetail = ({userDetail}) => {
                             <div className="col-md-2 ml-2"> Status</div>
 
                         </div>
+
+                        {/* userInfo.map( userDetails => <AdminServiceListDetail name = {userDetails.name} email = {userDetails.email} topic = {userDetails.topic} projectDetails = {projectDetails}></AdminServiceListDetail>) */}
+
                         <div className="row mt-3 body-part-2">
-                            <div className="col-md-2 mr-3">Rashidul</div>
-                            <div className="col-md-3 mr-4">rashidul.191cse.gub@gmail.com</div>
-                            <div className="col-md-2 mr-2">Graphic Design</div>
-                            <div className="col-md-2 mr-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-                            <div className="col-md-2 ml-2">
-                                <div class="form-group">
-                                    <select class="form-control option-style" >
-                                        <option className="text-option1">Pending</option>
-                                        <option className="text-option2">Done</option>
-                                    </select>
+
+                            {
+                                userInfo.map(user => <div >
+                                    <div className=" mr-3">
+                                        <h6>{user.name} {user.email} {user.topic} {user.projectDetails}</h6>
+                                        {/* <div className="col-md-3 mr-4"><h6>{user.email}</h6></div>
+                                    <div className="col-md-2 mr-2"><h6>{user.topic}</h6></div>
+                                    <div className="col-md-2 mr-2"><h6>{user.projectDetails}</h6></div> */}
+
+                                        <div className=" ml-2">
+                                            <div class="form-group">
+                                                <select class="form-control option-style" >
+                                                    <option className="text-option1">Pending</option>
+                                                    <option className="text-option2">Done</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                )
+                            }
+
                         </div>
                     </div>
                 </div>

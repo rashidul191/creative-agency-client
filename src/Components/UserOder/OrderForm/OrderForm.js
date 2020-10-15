@@ -3,12 +3,18 @@ import './OrderForm.css';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
 import AdminServiceListDetail from '../../AdminPanel/AdminPanelForm/AdminServiceListDetail';
+import { useHistory } from 'react-router-dom';
+// import { useEffect } from 'react';
 
 const OrderForm = () => {
 
+
+    const history = useHistory()
+
     const { register, handleSubmit, errors } = useForm();
 
-    const [userInfo, setUserInfo] = useState([]);
+    const [loggedInUser, setLoggedInUser] = useState({});
+    // const [userInfo, setUserInfo] = useState([]);
 
     const onSubmit = data => {
 
@@ -20,23 +26,17 @@ const OrderForm = () => {
             .then(res => res.json())
             .then(success => {
                 if (success) {
+                    history.push("/servicesList")
                     alert("Your Order Successful.");
-                    console.log(data);
+                    // console.log(data);
                 }
             })
-
-        fetch('http://localhost:5000/userDetailsByData', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ data })
-        })
-            .then(res => res.json())
-            .then(data => setUserInfo(data))
-
     }
 
     return (
         <section>
+
+
             <div>
                 <div className="row">
                     <div className="col-md-6">
@@ -66,7 +66,7 @@ const OrderForm = () => {
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="3" placeholder="Project Details"></textarea>
+                                    <textarea class="form-control" rows="3" name="projectDetails" ref={register({ required: true })} placeholder="Project Details"></textarea>
                                 </div>
                                 <div className="row">
                                     <div class="form-group col-md-4">
@@ -79,17 +79,19 @@ const OrderForm = () => {
                                 </div>
                                 <div>
                                     <button type="submit" className="btn-brand">Send</button>
+
                                 </div>
                             </form>
+
                         </div>
 
                     </div>
                 </div>
             </div>
             <div>
-                {
-                    userInfo.map(userDetail => <AdminServiceListDetail userDetail={userDetail} ></AdminServiceListDetail>)
-                }
+                {/* {
+                    userInfo.map( userDetails => <AdminServiceListDetail name = {userDetails.name} email = {userDetails.email} topic = {userDetails.topic} projectDetails = {userDetails.projectDetails}></AdminServiceListDetail>)
+                } */}
 
             </div>
         </section>

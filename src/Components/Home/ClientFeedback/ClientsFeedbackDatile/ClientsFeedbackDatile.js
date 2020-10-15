@@ -1,64 +1,53 @@
 import React from 'react';
 import './ClientsFeedbackDatile.css';
 import Customer1 from '../../../../images/customer-1.png';
-import Customer2 from '../../../../images/customer-2.png';
-import Customer3 from '../../../../images/customer-3.png';
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 const ClientsFeedbackDatile = () => {
 
+    const [reviewInfo, setReviewInfo] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviewByData')
+            .then(res => res.json())
+            .then(data => setReviewInfo(data))
+    }, [])
+
+
     const history = useHistory();
-    const handleFeedback=() =>{
+    const handleFeedback = () => {
         history.push("/review");
     }
     return (
         <section>
             <div className="mt-5 pt-5 p">
                 <div class="card-deck">
-                    <div class="card">
-                        <div onClick={handleFeedback} className="row">
-                            <div className="col-md-3">
-                                <img src={Customer1} class="card-img-top client-img-size" alt="..." />
+                    <div>
+                        {
+                            reviewInfo.map(review => <div>
+                                <div class="card row">
+                                    <div onClick={handleFeedback} className="row">
+                                        <div className="col-md-3">
+                                            <img src={Customer1} class="card-img-top client-img-size" alt="..." />
+                                        </div>
+                                        <div className="col-md-9">
+                                            <h5 class="card-title">{review.name}</h5>
+                                            <h6>{review.companyName}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">{review.description}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-md-9">
-                                <h4 class="card-title">Nash Patrik</h4>
-                                <h6>CEO, Manpol</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, deserunt dicta. Quam adipisci eius impedit sint doloremque quae dolorum iure.</p>
-                        </div>
+                            )
+                        }
                     </div>
-                    <div class="card">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <img src={Customer2} class="card-img-top client-img-size" alt="..." />
-                            </div>
-                            <div className="col-md-9">
-                                <h4 class="card-title">Miram Barron</h4>
-                                <h6>CSE, Manpol</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, deserunt dicta. Quam adipisci eius impedit sint doloremque quae dolorum iure.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <img src={Customer3} class="card-img-top client-img-size" alt="..." />
-                            </div>
-                            <div className="col-md-9">
-                                <h4 class="card-title">Bria Malone</h4>
-                                <h6>CEO, Manpol</h6>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, deserunt dicta. Quam adipisci eius impedit sint doloremque quae dolorum iure.</p>
-                        </div>
-                    </div>
+                   
                 </div>
 
             </div>
