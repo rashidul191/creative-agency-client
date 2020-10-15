@@ -2,11 +2,9 @@ import React from 'react';
 import './AddServiceDeatil.css';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+
 
 const AddServiceDeatil = () => {
-
-    const history = useHistory()
 
     const { register, handleSubmit, errors } = useForm();
 
@@ -30,20 +28,17 @@ const AddServiceDeatil = () => {
         formData.append('name', info.name);
         formData.append('description', info.description);
 
-
         fetch('http://localhost:5000/addService', {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
             body: formData
         })
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    history.push("/")
-                    alert("Your Add Services Successful.");
-                    // console.log(data);
+                    
+                    alert("Add Services Successful.");
+                   
                 }
-                console.log(data)
             })
             .catch(error => {
                 console.error(error)
