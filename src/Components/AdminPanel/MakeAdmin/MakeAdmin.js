@@ -1,5 +1,6 @@
 import React from 'react';
-import AdminSiteBar from '../AdminSiteBar/AdminSiteBar';
+import SiteBar from '../../UserOder/SiteBar/SiteBar';
+
 import MakeAdminDetail from './MakeAdminDetail/MakeAdminDetail';
 
 const MakeAdmin = () => {
@@ -7,7 +8,8 @@ const MakeAdmin = () => {
         <section className="container pt-4">
         <div className="row">
             <div className="col-md-2">
-                <AdminSiteBar></AdminSiteBar>
+               
+                <SiteBar></SiteBar>
             </div>
             <div className="col-md-10">
                <MakeAdminDetail></MakeAdminDetail>

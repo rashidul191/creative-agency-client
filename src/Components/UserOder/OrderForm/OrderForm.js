@@ -43,7 +43,7 @@ const OrderForm = () => {
                         <h5>Order</h5>
                     </div>
                     <div className="col-md-6">
-                        <small><h6>Pro Rasel</h6></small>
+                        <small><h6>User</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body">

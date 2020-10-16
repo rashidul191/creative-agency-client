@@ -4,6 +4,9 @@
     background-color: #FFFFFF;
     margin-left: 10px;
     border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 20px;
+
 }
 
 .service-img{
@@ -15,10 +18,12 @@
     height: 600px;
     width: 90%;
     margin-left: 35px;
-    margin-top: 50px;
+    margin: 10px;
+   
 }
 .services-margin{
     margin: 15px;
+    
 }
 
 .btn-pending-style{

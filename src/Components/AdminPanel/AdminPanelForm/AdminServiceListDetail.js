@@ -24,7 +24,7 @@ const AdminServiceListDetail = () => {
                         <h5>Service List</h5>
                     </div>
                     <div className="col-md-5 ml-5">
-                        <small><h6>Sufi Ahmed</h6></small>
+                        <small><h6>Admin</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body pt-3">
@@ -56,7 +56,7 @@ const AdminServiceListDetail = () => {
                                                     <select class="form-control option-style" >
                                                         <option className="text-option1">Pending</option>
                                                         <option className="text-option2">Done</option>
-                                                        <option className="text-option2">On going</option>
+                                                        <option className="text-option3">On going</option>
 
                                                     </select>
 

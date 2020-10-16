@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminSiteBar from '../AdminSiteBar/AdminSiteBar';
+import SiteBar from '../../UserOder/SiteBar/SiteBar';
 import AddServiceDeatil from './AddServiceDeatil/AddServiceDeatil';
 
 const AddService = () => {
@@ -7,7 +7,7 @@ const AddService = () => {
         <section className="container pt-4">
         <div className="row">
             <div className="col-md-2">
-                <AdminSiteBar></AdminSiteBar>
+                <SiteBar></SiteBar>
             </div>
             <div className="col-md-10">
                <AddServiceDeatil></AddServiceDeatil>

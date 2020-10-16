@@ -53,7 +53,7 @@ const AddServiceDeatil = () => {
                         <h5>Add Service</h5>
                     </div>
                     <div className="col-md-5 ml-5">
-                        <small><h6>Sufi Ahmed</h6></small>
+                        <small><h6>Admin</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body  pt-3">
