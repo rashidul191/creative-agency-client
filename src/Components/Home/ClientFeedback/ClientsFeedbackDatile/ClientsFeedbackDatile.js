@@ -33,7 +33,7 @@ const ClientsFeedbackDatile = () => {
                         {
                             reviewInfo.map(review => <div className="col-md-4">
                                 <div class="card row">
-                                    <div  className="row">
+                                    <div  className="row ml-2 pt-3">
                                         <div className="col-md-3">
                                             <img src={profile} class="card-img-top client-img-size" alt="..." />
                                         </div>
