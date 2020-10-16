@@ -1,6 +1,7 @@
 import React from 'react';
 import './ClientsFeedbackDatile.css';
 import profile from '../../../../images/profile-icon.png';
+import loadingImg from '../../../../images/loading.gif';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -12,7 +13,7 @@ const ClientsFeedbackDatile = () => {
     const [reviewInfo, setReviewInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviewByData')
+        fetch('https://glacial-stream-51727.herokuapp.com/reviewByData')
             .then(res => res.json())
             .then(data => setReviewInfo(data))
     }, [])
@@ -27,6 +28,9 @@ const ClientsFeedbackDatile = () => {
             <div className="mt-5 pt-5 p">
                 <div class="card-deck">
                     <div className="row">
+                        {
+                            reviewInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt=""/>
+                        }
                         {
                             reviewInfo.map(review => <div className="col-md-4">
                                 <div class="card row">

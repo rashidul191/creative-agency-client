@@ -3,6 +3,9 @@ import SiteBar from '../../UserOder/SiteBar/SiteBar';
 import AddServiceDeatil from './AddServiceDeatil/AddServiceDeatil';
 
 const AddService = () => {
+
+    document.title="Add Service";
+
     return (
         <section className="container pt-4">
         <div className="row">

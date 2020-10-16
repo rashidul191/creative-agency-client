@@ -18,7 +18,7 @@ const OrderForm = () => {
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/addUserDetails', {
+        fetch('https://glacial-stream-51727.herokuapp.com/addUserDetails', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -47,7 +47,7 @@ const OrderForm = () => {
                     </div>
                 </div>
                 <div className="order-from-body">
-                    <div className="pt-4">
+                    <div className="pt-1">
                         <div className="order-from">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <div class="form-group">

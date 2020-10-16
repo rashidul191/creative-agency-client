@@ -4,6 +4,9 @@ import SiteBar from '../SiteBar/SiteBar';
 import OrderForm from '../OrderForm/OrderForm';
 
 const UserOder = () => {
+
+    document.title="Order";
+    
     return (
         <section className="container pt-4">
             <div className="row">

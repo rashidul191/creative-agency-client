@@ -4,6 +4,9 @@ import AdminServiceListDetail from '../AdminPanelForm/AdminServiceListDetail';
 
 
 const AdminServiceList = () => {
+
+    document.title="Service List";
+
     return (
         <section className="container pt-4">
         <div className="row">

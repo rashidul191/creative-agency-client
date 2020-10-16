@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
 
+    document.title="Login";
 
     const [user, setUser] = useState({
         isSignedIn: false,

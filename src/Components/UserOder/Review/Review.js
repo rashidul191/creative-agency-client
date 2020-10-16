@@ -3,6 +3,10 @@ import SiteBar from '../SiteBar/SiteBar';
 import ReviewDetails from './ReviewDetails/ReviewDetails';
 
 const Review = () => {
+
+
+    document.title="Review";
+
     return (
         <section className="container pt-4">
             <div className="row">

@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProvideServices.css';
 import Service1 from '../../../images/icons/service1.png';
+import loadingImg from '../../../images/loading.gif';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -11,7 +12,7 @@ const ProvideServices = () => {
     const [serviceInfo, setServiceInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/serviceByData')
+        fetch('https://glacial-stream-51727.herokuapp.com/serviceByData')
             .then(res => res.json())
             .then(data => setServiceInfo(data))
     }, [])
@@ -30,6 +31,9 @@ const ProvideServices = () => {
                 <div>
                     <div class=" card-deck">
                         <div className="row">
+                        {
+                            serviceInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt=""/>
+                        }
                             {
                                 serviceInfo.map(addService => <div className="col-md-4">
                                     <div onClick={handleOrder} class="card card-border mt-3">

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ServiceListDatiles.css';
 import Service1 from '../../../../images/icons/service1.png';
-import Service2 from '../../../../images/icons/service2.png';
+import loadingImg from '../../../../images/loading.gif';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -11,7 +11,7 @@ const ServiceListDatiles = () => {
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/userDetailsByData')
+        fetch('https://glacial-stream-51727.herokuapp.com/userDetailsByData')
             .then(res => res.json())
             .then(data => setUserInfo(data))
     }, [])
@@ -32,7 +32,9 @@ const ServiceListDatiles = () => {
                     <div className="pt-1">
                         <div className="serviceList-order">
                             <div className="row">
-
+                                {
+                                    userInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt="" />
+                                }
                                 {
                                     userInfo.map(user =>
                                         <div className="col-md-5">

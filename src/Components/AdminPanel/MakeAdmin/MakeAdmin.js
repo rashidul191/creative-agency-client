@@ -4,6 +4,9 @@ import SiteBar from '../../UserOder/SiteBar/SiteBar';
 import MakeAdminDetail from './MakeAdminDetail/MakeAdminDetail';
 
 const MakeAdmin = () => {
+
+    document.title="Make Admin";
+
     return (
         <section className="container pt-4">
         <div className="row">

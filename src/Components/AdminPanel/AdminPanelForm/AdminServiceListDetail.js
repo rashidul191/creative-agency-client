@@ -1,5 +1,6 @@
 import React from 'react';
 import './AdminServiceListDetail.css';
+import loadingImg from '../../../images/loading.gif';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -9,7 +10,7 @@ const AdminServiceListDetail = () => {
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/userDetailsByData')
+        fetch('https://glacial-stream-51727.herokuapp.com/userDetailsByData')
             .then(res => res.json())
             .then(data => setUserInfo(data))
     }, [])
@@ -42,6 +43,9 @@ const AdminServiceListDetail = () => {
                         {/* userInfo.map( userDetails => <AdminServiceListDetail name = {userDetails.name} email = {userDetails.email} topic = {userDetails.topic} projectDetails = {projectDetails}></AdminServiceListDetail>) */}
 
                         <div className=" mt-3 body-part-2">
+                        {
+                            userInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt=""/>
+                        }
 
                             {
                                 userInfo.map(user =>

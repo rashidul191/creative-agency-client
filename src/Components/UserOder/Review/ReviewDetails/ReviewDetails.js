@@ -9,7 +9,7 @@ const ReviewDetails = () => {
     const { register, handleSubmit, errors } = useForm();
 
     const reviewSubmit = data => {
-        fetch('http://localhost:5000/addReview',{
+        fetch('https://glacial-stream-51727.herokuapp.com/addReview',{
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)  
@@ -37,7 +37,7 @@ const ReviewDetails = () => {
                     </div>
                 </div>
                 <div className="order-from-body">
-                    <div className="pt-4">
+                    <div className="pt-1">
                         <div className="order-from">
                             <form onSubmit={handleSubmit(reviewSubmit)}>
                                 <div class="form-group">

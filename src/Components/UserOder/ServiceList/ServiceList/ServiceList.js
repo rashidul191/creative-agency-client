@@ -3,6 +3,9 @@ import SiteBar from '../../SiteBar/SiteBar';
 import ServiceListDatiles from '../ServiceListDatiles/ServiceListDatiles';
 
 const ServiceList = () => {
+
+    document.title="Service List";
+
     return (
 
 
