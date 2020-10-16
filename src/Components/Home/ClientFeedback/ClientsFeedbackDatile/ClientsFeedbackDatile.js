@@ -2,7 +2,7 @@ import React from 'react';
 import './ClientsFeedbackDatile.css';
 import profile from '../../../../images/profile-icon.png';
 import loadingImg from '../../../../images/loading.gif';
-import { useHistory } from 'react-router-dom';
+
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -19,10 +19,7 @@ const ClientsFeedbackDatile = () => {
     }, [])
 
 
-    const history = useHistory();
-    const handleFeedback = () => {
-        history.push("/review");
-    }
+    
     return (
         <section>
             <div className="mt-5 pt-5 p">
@@ -34,7 +31,7 @@ const ClientsFeedbackDatile = () => {
                         {
                             reviewInfo.map(review => <div className="col-md-4">
                                 <div class="card row">
-                                    <div onClick={handleFeedback} className="row">
+                                    <div  className="row">
                                         <div className="col-md-3">
                                             <img src={profile} class="card-img-top client-img-size" alt="..." />
                                         </div>

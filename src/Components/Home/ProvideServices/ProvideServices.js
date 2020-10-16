@@ -20,7 +20,7 @@ const ProvideServices = () => {
 
     const history = useHistory()
     const handleOrder = () => {
-        history.push("/userOrder");
+        history.push("/admin");
     }
     return (
         <section className="container">

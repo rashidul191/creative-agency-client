@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../../../App';
 
 const ReviewDetails = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory()
 
     const { register, handleSubmit, errors } = useForm();
 
     const reviewSubmit = data => {
-        fetch('https://glacial-stream-51727.herokuapp.com/addReview',{
+        fetch('https://glacial-stream-51727.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data)  
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
+            .then(res => res.json())
             .then(success => {
                 if (success) {
                     history.push("/")
@@ -30,10 +32,10 @@ const ReviewDetails = () => {
             <div>
                 <div className="row">
                     <div className="col-md-6">
-                        <h5>Order</h5>
+                        <h5>Review</h5>
                     </div>
                     <div className="col-md-6">
-                        <small><h6>User</h6></small>
+                        <small><h6>{loggedInUser.name}</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body">
@@ -53,7 +55,7 @@ const ReviewDetails = () => {
                                 <div class="form-group">
                                     <textarea class="form-control" rows="3" name="description" ref={register({ required: true })} placeholder=" Description"></textarea>
                                 </div>
-                    
+
                                 <div>
                                     <button type="submit" className="btn-brand">Submit</button>
                                 </div>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './AdminServiceListDetail.css';
 import loadingImg from '../../../images/loading.gif';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { UserContext } from '../../../App';
 
 
 const AdminServiceListDetail = () => {
+
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const [userInfo, setUserInfo] = useState([]);
 
@@ -25,7 +29,7 @@ const AdminServiceListDetail = () => {
                         <h5>Service List</h5>
                     </div>
                     <div className="col-md-5 ml-5">
-                        <small><h6>Admin</h6></small>
+                        <small><h6>Admin : {loggedInUser.name}</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body pt-3">
@@ -43,9 +47,9 @@ const AdminServiceListDetail = () => {
                         {/* userInfo.map( userDetails => <AdminServiceListDetail name = {userDetails.name} email = {userDetails.email} topic = {userDetails.topic} projectDetails = {projectDetails}></AdminServiceListDetail>) */}
 
                         <div className=" mt-3 body-part-2">
-                        {
-                            userInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt=""/>
-                        }
+                            {
+                                userInfo.length === 0 && <img className="loadingImg-size" src={loadingImg} alt="" />
+                            }
 
                             {
                                 userInfo.map(user =>

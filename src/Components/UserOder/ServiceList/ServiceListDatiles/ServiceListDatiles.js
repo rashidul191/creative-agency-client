@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ServiceListDatiles.css';
 import Service1 from '../../../../images/icons/service1.png';
 import loadingImg from '../../../../images/loading.gif';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { UserContext } from '../../../../App';
 
 
 const ServiceListDatiles = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
@@ -25,7 +27,7 @@ const ServiceListDatiles = () => {
                         <h5>Order</h5>
                     </div>
                     <div className="col-md-6">
-                        <small><h6>User</h6></small>
+                        <small><h6>{loggedInUser.name}</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body">

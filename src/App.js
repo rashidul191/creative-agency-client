@@ -45,6 +45,10 @@ function App() {
             <UserOder></UserOder>
           </Route>
 
+          <Route path="/admin">
+            <UserOder></UserOder>
+          </Route>
+
 
           <Route path="/servicesList">
             <ServiceList></ServiceList>
@@ -67,6 +71,10 @@ function App() {
           </Route>
 
           {/* <PrivateRoute path="/userOrder">
+            <UserOder></UserOder>
+          </PrivateRoute>
+
+          <PrivateRoute path="/admin">
             <UserOder></UserOder>
           </PrivateRoute>
 

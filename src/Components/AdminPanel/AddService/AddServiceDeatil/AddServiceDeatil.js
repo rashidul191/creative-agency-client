@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './AddServiceDeatil.css';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
+import { UserContext } from '../../../../App';
 
 
 const AddServiceDeatil = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const { register, handleSubmit, errors } = useForm();
 
@@ -35,9 +38,9 @@ const AddServiceDeatil = () => {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    
+
                     alert("Add Services Successful.");
-                   
+
                 }
             })
             .catch(error => {
@@ -53,7 +56,7 @@ const AddServiceDeatil = () => {
                         <h5>Add Service</h5>
                     </div>
                     <div className="col-md-5 ml-5">
-                        <small><h6>Admin</h6></small>
+                        <small><h6>Admin : {loggedInUser.name}</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body  pt-3">

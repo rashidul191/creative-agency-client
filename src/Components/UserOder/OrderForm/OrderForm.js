@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './OrderForm.css';
 import { useForm } from "react-hook-form";
-import { useState } from 'react';
-import AdminServiceListDetail from '../../AdminPanel/AdminPanelForm/AdminServiceListDetail';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../../App';
 // import { useEffect } from 'react';
 
 const OrderForm = () => {
 
-
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory()
 
     const { register, handleSubmit, errors } = useForm();
 
-    const [loggedInUser, setLoggedInUser] = useState({});
     // const [userInfo, setUserInfo] = useState([]);
 
     const onSubmit = data => {
@@ -43,7 +41,7 @@ const OrderForm = () => {
                         <h5>Order</h5>
                     </div>
                     <div className="col-md-6">
-                        <small><h6>User</h6></small>
+                        <small><h6>{loggedInUser.name}</h6></small>
                     </div>
                 </div>
                 <div className="order-from-body">
