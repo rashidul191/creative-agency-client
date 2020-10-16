@@ -32,3 +32,11 @@
 .text-option2{
     color: green;
 }
+.text-option3{
+    color: yellow;
+}
+
+
+.option-style{
+    border: 1px solid gray;
+}

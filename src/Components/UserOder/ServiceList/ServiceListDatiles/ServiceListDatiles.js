@@ -35,8 +35,8 @@ const ServiceListDatiles = () => {
 
                                 {
                                     userInfo.map(user =>
-                                        <div>
-                                            <div className="col-md-5 services-list-card">
+                                        <div className="col-md-5">
+                                            <div className="services-list-card">
                                                 <div className="row services-margin">
                                                     <div className="col-md-6">
                                                         <img className="service-img" src={Service1} alt="" />
@@ -46,7 +46,7 @@ const ServiceListDatiles = () => {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <h3>{user.topic}</h3>
+                                                    <h5>{user.topic}</h5>
                                                     <p><small>{user.projectDetails}</small></p>
                                                 </div>
                                             </div>
@@ -55,20 +55,6 @@ const ServiceListDatiles = () => {
                                     )
                                 }
 
-                                {/* <div className="col-md-5 services-list-card">
-                                <div className="row services-margin">
-                                        <div className="col-md-6">
-                                            <img className="service-img" src={Service2} alt="" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <button className="btn-done-style" type="button">Done</button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3>Graphic design</h3>
-                                        <p><small>Amazing flyers, social media posts and <br/> brand representaions that would make <br/> your brand stand out.</small></p>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
 

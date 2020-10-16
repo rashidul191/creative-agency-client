@@ -31,37 +31,39 @@ const AdminServiceListDetail = () => {
 
                     <div className="serviceList-container ">
                         <div className="row body-part-1">
-                            <div className="col-md-2 mr-3">Name</div>
-                            <div className="col-md-3 mr-4">Email ID</div>
-                            <div className="col-md-2 mr-2">Service</div>
-                            <div className="col-md-2 mr-2"> Project Details</div>
+                            <div className="col-md-2 ">Name</div>
+                            <div className="col-md-3 ">Email ID</div>
+                            <div className="col-md-2 ">Service</div>
+                            <div className="col-md-2 "> Project Details</div>
                             <div className="col-md-2 ml-2"> Status</div>
 
                         </div>
 
                         {/* userInfo.map( userDetails => <AdminServiceListDetail name = {userDetails.name} email = {userDetails.email} topic = {userDetails.topic} projectDetails = {projectDetails}></AdminServiceListDetail>) */}
 
-                        <div className="row mt-3 body-part-2">
+                        <div className=" mt-3 body-part-2">
 
                             {
-                                userInfo.map(user => <div >
-                                    <div className=" mr-3">
-                                        <h6>{user.name} {user.email} {user.topic} {user.projectDetails}</h6>
-                                        {/* <div className="col-md-3 mr-4"><h6>{user.email}</h6></div>
-                                    <div className="col-md-2 mr-2"><h6>{user.topic}</h6></div>
-                                    <div className="col-md-2 mr-2"><h6>{user.projectDetails}</h6></div> */}
+                                userInfo.map(user =>
+                                    <div className="">
+                                        <div className="row mr-3">
+                                            <div className="col-md-2 "> <h6>{user.name} </h6></div>
+                                            <div className="col-md-3 "><h6>{user.email}</h6></div>
+                                            <div className="col-md-2 "><h6>{user.topic}</h6></div>
+                                            <div className="col-md-2 "><h6>{user.projectDetails}</h6></div>
+                                            <div className="col-md-2 ">
+                                                <div class="form-group ">
+                                                    <select class="form-control option-style" >
+                                                        <option className="text-option1">Pending</option>
+                                                        <option className="text-option2">Done</option>
+                                                        <option className="text-option2">On going</option>
 
-                                        <div className=" ml-2">
-                                            <div class="form-group">
-                                                <select class="form-control option-style" >
-                                                    <option className="text-option1">Pending</option>
-                                                    <option className="text-option2">Done</option>
-                                                </select>
+                                                    </select>
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 )
                             }
 
