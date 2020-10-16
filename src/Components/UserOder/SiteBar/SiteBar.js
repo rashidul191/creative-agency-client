@@ -5,13 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faPlus, faShoppingCart, faTaxi, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { UserContext } from '../../../App';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 const SiteBar = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [isAdmin, sedIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/isAdmin',{
+            method:'POST',
+            headers: {'content-type':'application/json'},
+            body: JSON.stringify({email: loggedInUser.email})
+        })
+        .then(res => res.json())
+        .then(data => setIsAdmin(data));
+    },[])
 
     return (
         <section>
@@ -23,13 +34,13 @@ const SiteBar = () => {
                 <Link to="/servicesList"><FontAwesomeIcon icon={faTaxi} /> Service list  </Link><br />
                 <Link to="/review"> <FontAwesomeIcon icon={faCommentDots} /> Review </Link><br />
             </div>
-            <div>
+            {  isAdmin && <div>
                 <div className="">
                     <Link to="/adminServiceList"> <FontAwesomeIcon icon={faTaxi} /> Service list</Link><br />
                     <Link to="/addService"><FontAwesomeIcon icon={faPlus} /> Add Service</Link><br />
                     <Link to="/makeAdmin"><FontAwesomeIcon icon={faUsers} /> Make Admin</Link><br />
                 </div>
-            </div>
+            </div>}
         </section>
     );
 };
