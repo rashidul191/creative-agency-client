@@ -21,7 +21,7 @@ const ReviewDetails = () => {
                 if (success) {
                     history.push("/")
                     alert("Your Review Successful.");
-                    console.log(data);
+                   
                 }
             })
     }
