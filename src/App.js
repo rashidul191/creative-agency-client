@@ -41,7 +41,7 @@ function App() {
             <Login></Login>
           </Route>
 
-          <Route path="/userOrder">
+          {/* <Route path="/userOrder">
             <UserOder></UserOder>
           </Route>
 
@@ -68,9 +68,9 @@ function App() {
 
           <Route path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </Route> */}
 
-          {/* <PrivateRoute path="/userOrder">
+          <PrivateRoute path="/userOrder">
             <UserOder></UserOder>
           </PrivateRoute>
 
@@ -97,7 +97,7 @@ function App() {
 
           <PrivateRoute path="/makeAdmin">
             <MakeAdmin></MakeAdmin>
-          </PrivateRoute> */}
+          </PrivateRoute>
 
           <Route path="*">
             <NoMatch />
