@@ -10,7 +10,6 @@ o	Admin can add a new type of course and show all user lists.
 •	GitHub Repository (Client): https://github.com/rashidul191/creative-agency-client
 •	GitHub Repository (Server): https://github.com/rashidul191/creative-agency-server
 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
