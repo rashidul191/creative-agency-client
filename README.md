@@ -1,10 +1,7 @@
 Create Agency (Full-Stack)
-*	Overview:
-1	A full stack IT-Service provider web application.
-2	If the user wants, can select a particular course and add feedback.
-3	The web app shows different types of options for a user and admin.
-4	Admin can add a new type of course and show all user lists.
-
+*	Overview:	A full stack IT-Service provider web application. If the user wants, can select a particular course and add feedback.
+	The web app shows different types of options for a user and admin. Admin can add a new type of course and show all user lists.
+  
 *	Technology: JavaScript, React, Node.js, Express.js, Bootstrap, Material-UI, MongoDB, Firebase Authentication, Heroku.
 *	Website: https://creative-agency-rashidul.netlify.app/
 *	GitHub Repository (Client): https://github.com/rashidul191/creative-agency-client
