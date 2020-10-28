@@ -9,6 +9,8 @@ o	Admin can add a new type of course and show all user lists.
 •	Website: https://creative-agency-rashidul.netlify.app/
 •	GitHub Repository (Client): https://github.com/rashidul191/creative-agency-client
 •	GitHub Repository (Server): https://github.com/rashidul191/creative-agency-server
+* Resume Link: https://drive.google.com/file/d/163zEw4V0DUeRFnh3gcs44hrB3nkc_FR9/view?usp=sharing
+* LinkedIn Link : https://www.linkedin.com/in/rashidul191/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
